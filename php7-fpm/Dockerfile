@@ -37,4 +37,7 @@ RUN pecl install xdebug \
 RUN echo 'alias sf="php app/console"' >> ~/.bashrc \
 && echo 'alias sf3="php bin/console"' >> ~/.bashrc
 
+# jamie's memory limit fix
+RUN echo 'memory_limit = 2G' >> /usr/local/etc/php/conf.d/docker-php-memlimit.ini
+
 WORKDIR /var/www/symfony
