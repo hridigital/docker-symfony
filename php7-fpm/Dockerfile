@@ -1,5 +1,5 @@
 # See https://github.com/docker-library/php/blob/master/7.1/fpm/Dockerfile
-FROM php:7.1-fpm
+FROM php:7.0-fpm
 ARG TIMEZONE
 
 MAINTAINER Maxence POUTORD <maxence.poutord@gmail.com>
@@ -39,5 +39,10 @@ RUN echo 'alias sf="php app/console"' >> ~/.bashrc \
 
 # jamie's memory limit fix
 RUN echo 'memory_limit = 2G' >> /usr/local/etc/php/conf.d/docker-php-memlimit.ini
+
+# jamie would like to run the symfony command
+RUN mkdir -p /usr/local/bin \
+&& curl -LsS https://symfony.com/installer -o /usr/local/bin/symfony \
+&& chmod a+x /usr/local/bin/symfony
 
 WORKDIR /var/www/symfony
