@@ -45,4 +45,10 @@ RUN mkdir -p /usr/local/bin \
 && curl -LsS https://symfony.com/installer -o /usr/local/bin/symfony \
 && chmod a+x /usr/local/bin/symfony
 
+# jamie needs the php zip extension so ckeditor can unpack its assets
+RUN apt-get update && apt-get install -y \
+    zlib1g-dev \
+    libzip-dev
+RUN docker-php-ext-install zip
+
 WORKDIR /var/www/symfony
