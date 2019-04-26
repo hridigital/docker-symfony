@@ -38,7 +38,7 @@ RUN echo 'alias sf="php app/console"' >> ~/.bashrc \
 && echo 'alias sf3="php bin/console"' >> ~/.bashrc
 
 # jamie's memory limit fix
-RUN echo 'memory_limit = 2G' >> /usr/local/etc/php/conf.d/docker-php-memlimit.ini
+RUN echo 'memory_limit = 4G' >> /usr/local/etc/php/conf.d/docker-php-memlimit.ini
 
 # jamie would like to run the symfony command
 RUN mkdir -p /usr/local/bin \
