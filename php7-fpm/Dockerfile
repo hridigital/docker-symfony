@@ -57,4 +57,7 @@ RUN apt-get update && apt-get install -y \
     && pecl install imagick \
     && docker-php-ext-enable imagick
 
+# jamie wants vim
+RUN apt-get update && apt-get install -y vim
+
 WORKDIR /var/www/symfony
