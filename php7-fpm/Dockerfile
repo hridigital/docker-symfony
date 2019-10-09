@@ -60,4 +60,8 @@ RUN apt-get update && apt-get install -y \
 # jamie wants vim
 RUN apt-get update && apt-get install -y vim
 
+# jamie wants rlwrap 
+# so php shell scripts correctly interpret backspace and arrow keys
+RUN apt-get update && apt-get install -y rlwrap
+
 WORKDIR /var/www/symfony

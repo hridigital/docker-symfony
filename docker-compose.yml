@@ -6,6 +6,7 @@ services:
         image: mysql:5.7
         volumes:
             - "./.data/db:/var/lib/mysql"
+            - "../:/project"
         environment:
             MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
             MYSQL_DATABASE: ${MYSQL_DATABASE}
